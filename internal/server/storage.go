@@ -74,3 +74,23 @@ func (s *Storage) AddClick(shortURL string) error {
 		`, shortURL)
 	return err
 }
+
+func (s *Storage) GetRandomURL() (string, error) {
+	row := s.db.QueryRow(`
+		SELECT short_url
+		FROM urls
+		ORDER BY RANDOM() LIMIT 1
+		`)
+
+	var shortURL string
+	err := row.Scan(&shortURL)
+	if err == sql.ErrNoRows {
+		return "", errors.New("no row found")
+	}
+
+	if err != nil {
+		return "", err
+	}
+
+	return shortURL, nil
+}

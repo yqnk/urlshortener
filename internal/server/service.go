@@ -58,3 +58,7 @@ func (s *Service) GetOriginalURL(shortURL string) (*model.URL, error) {
 func (s *Service) AddClick(shortURL string) error {
 	return s.storage.AddClick(shortURL)
 }
+
+func (s *Service) GetRandomURL() (string, error) {
+	return s.storage.GetRandomURL()
+}
