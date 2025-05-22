@@ -1,4 +1,3 @@
 # urlshortener
 
-A small urlshortener written in **Go** using **fasthttp** to handle requests and **SQLite** as our database.
-# urlshortener
+A small urlshortener written in **Go** using **fasthttp** to handle requests and **SQLite** as database.
