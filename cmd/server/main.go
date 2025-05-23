@@ -17,8 +17,8 @@ func main() {
 
 	handler := server.NewHandler(service)
 
-	host := flag.String("host", "localhost", "a string")
-	port := flag.String("port", "3333", "a string")
+	host := flag.String("host", "0.0.0.0", "a string")
+	port := flag.String("port", "3434", "a string")
 
 	flag.Parse()
 
