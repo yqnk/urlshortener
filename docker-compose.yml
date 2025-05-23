@@ -1,0 +1,8 @@
+services:
+  urlshortener:
+    build: .
+    ports:
+      - "3434:3434"
+    volumes:
+      - ./urlshortener.db:/root/urlshortener.db
+    restart: unless-stopped
